@@ -1,0 +1,19 @@
+<h2>Posts List: </h2>
+<hr>
+<a href="/admin/posts/add"><button class="btn btn-success btn-sm">New Post</button></a>
+
+{{#each posts}}
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4>{{title}}</h4>
+      <p>Description: {{description}}</p>
+      <p>Slug: {{slug}}</p> 
+      <small>Date: {{date}}</small> <br>
+      <small>Category: {{category.name}}</small> <br>
+      <a href="/admin/posts/edit/{{_id}}"><button class="btn btn-success btn-sm mt-2">Edit Post</button></a>
+      <a href="/admin/posts/delete/{{_id}}"><button class="btn btn-danger btn-sm mt-2">Delete Post</button></a>
+    </div>
+  </div>
+{{else}}
+  <p>No registered post</p>
+{{/each}}
